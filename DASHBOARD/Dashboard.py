@@ -13,7 +13,6 @@ from dash.dependencies import Input, Output
 
 # Menampilkan judul di Sidebar
 st.sidebar.title("Analisis Data Pelanggan, Pembayaran, dan Geolokasi")
-st.sidebar.image("c:\SINAU\DATA ANALIS\dicoding\SUBMISSION\Image.png")
 
 # Konten lainnya
 st.header("SILAKAN PILIH MENU SESUAI PREFERENSI ANDA ")
