@@ -252,7 +252,7 @@ with tab4:
 with tab5:
 
     # Memuat dataset
-    order_payments_df = pd.read_csv('C:/SINAU/DATA ANALIS/dicoding/SUBMISSION/DASHBOARD/order_payments_dataset.csv')
+    order_payments_df = pd.read_csv('DASHBOARD/order_payments_dataset.csv')
 
     # Membersihkan kolom dari spasi ekstra
     order_payments_df.columns = order_payments_df.columns.str.strip()
