@@ -1,0 +1,8 @@
+streamlit == 1.40.2
+pandas == 2.2.3
+seaborn == 0.13.2
+matplotlib.pyplot == 3.9.2
+folium ==0.19.2
+dash == 2.18.2
+dash_core_components == 2.0.0
+dash_html_components == 2.0.0
