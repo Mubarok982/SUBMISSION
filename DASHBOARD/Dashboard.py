@@ -22,9 +22,9 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Overview", "Analisis Customer", "RFM An
 
 #load data 
 # Data import dan processing 
-customer_df = pd.read_csv("main_data.csv")
-geolocation_df = pd.read_csv("main_data.csv")
-order_payments_df = pd.read_csv("main_data.csv")
+customer_df = pd.read_csv("DASHBOARD/main_data.csv")
+geolocation_df = pd.read_csv("DASHBOARD/main_data.csv")
+order_payments_df = pd.read_csv("DASHBOARD/main_data.csv")
 #integrasi dengan overview 
 with tab1:
     st.header("Informasi Dataset")
