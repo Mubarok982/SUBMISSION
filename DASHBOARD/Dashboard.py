@@ -44,7 +44,7 @@ with tab2:
     st.header("Distribusi Customer")
 
     # Memuat dataset
-    data = pd.read_csv('C:\SINAU\DATA ANALIS\dicoding\SUBMISSION\DASHBOARD\main_data.csv')
+    data = pd.read_csv(r'C:\SINAU\DATA ANALIS\dicoding\SUBMISSION\DASHBOARD\main_data.csv')
 
     # Membersihkan nama kolom dari spasi ekstra
     data.columns = data.columns.str.strip()
