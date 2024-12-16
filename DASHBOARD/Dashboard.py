@@ -10,7 +10,35 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
+# CSS untuk mengubah background menjadi gelap
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #2e2e2e;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+app = dash.Dash(__name__)
 
+app.layout = html.Div([
+    html.H1("Halo Dunia"),
+    dcc.Input(id="input", type="text", value=""),
+    html.Div(id="output")
+])
+
+@app.callback(
+    Output("output", "children"),
+    [Input("input", "value")]
+)
+def update_output(value):
+    return f"You entered: {value}"
+
+if __name__ == "__main__":
+    app.run_server(debug=True, use_reloader=False)
 # Menampilkan judul di Sidebar
 st.sidebar.title("Analisis Data Pelanggan, Pembayaran, dan Geolokasi")
 
