@@ -41,7 +41,7 @@ if __name__ == "__main__":
     app.run_server(debug=True, use_reloader=False)
 # Menampilkan judul di Sidebar
 st.sidebar.title("Analisis Data Pelanggan, Pembayaran, dan Geolokasi")
-
+st.sidebar.image("SUBMISSION\Image.png")
 # Konten lainnya
 st.header("SILAKAN PILIH MENU SESUAI PREFERENSI ANDA ")
 
