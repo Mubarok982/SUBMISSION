@@ -7,11 +7,13 @@ from folium.plugins import MarkerCluster
 import folium
 import streamlit.components.v1 as components
 
-# Fungsi untuk memuat data 
+import pandas as pd
+
 def load_data():
-    data_path = "DASHOARD\main_data.csv" 
+    data_path = r"DASHOARD\main_data.csv"  
     data = pd.read_csv(data_path)
     return data
+
 
 # Fungsi untuk mendapatkan koordinat provinsi (khusus Brasil)
 def get_koordinat_provinsi(state):
