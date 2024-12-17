@@ -13,7 +13,7 @@ customer_df = pd.read_csv("DASHBOARD/main_data.csv")
 geolocation_df = pd.read_csv("DASHBOARD/main_data.csv")
 order_payments_df = pd.read_csv("DASHBOARD/main_data.csv")
 
-order_purchase = pd.read_csv("DASHBOARD\main_data.csv")
+order_purchase = pd.read_csv("DASHBOARD/main_data.csv")
 # Menampilkan judul di Sidebar
 st.sidebar.title("Analisis Data Pelanggan, Pembayaran, dan Geolokasi")
 st.sidebar.image("c:\SINAU\DATA ANALIS\dicoding\SUBMISSION\Image.png")
