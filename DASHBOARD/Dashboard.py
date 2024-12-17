@@ -115,7 +115,7 @@ with tab2:
 # Analisis Geospasial
 with tab4:
  # Memuat dataset
-    data = pd.read_csv("DASHBOARD\main_data.csv")
+    data = pd.read_csv("DASHBOARD/main_data.csv")
 
  # Membersihkan nama kolom dari spasi ekstra
     data.columns = data.columns.str.strip()
