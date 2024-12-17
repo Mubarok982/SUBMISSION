@@ -9,7 +9,7 @@ import streamlit.components.v1 as components
 
 # Fungsi untuk memuat data (hanya developer yang bisa memuat dataset)
 def load_data():
-    data_path = "DASHOARD/main_datacsv" 
+    data_path = "DASHOARD\main_datacsv" 
     data = pd.read_csv(data_path)
     return data
 
