@@ -152,7 +152,7 @@ with tab3:
         
 
     # Langkah 1: Memuat dataset
-    df = pd.read_csv('main_data.csv')
+    df = pd.read_csv("DASHBOARD/main_data.csv")
 
     # Langkah 2: Mengubah kolom 'order_purchase_timestamp' menjadi tipe datetime
     df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
