@@ -7,9 +7,9 @@ from folium.plugins import MarkerCluster
 import folium
 import streamlit.components.v1 as components
 
-# Fungsi untuk memuat data (hanya developer yang bisa memuat dataset)
+# Fungsi untuk memuat data 
 def load_data():
-    data_path = "DASHOARD\main_datacsv" 
+    data_path = "DASHOARD\main_data.csv" 
     data = pd.read_csv(data_path)
     return data
 
