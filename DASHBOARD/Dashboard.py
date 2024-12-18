@@ -17,7 +17,7 @@ def load_data():
 customer_df = load_data()
 
 # Pastikan kolom 'tanggal' ada dan dalam format datetime
-customer_df['tanggal'] = pd.to_datetime(customer_df['tanggal'], errors='coerce')
+customer_df['tanggal'] = pd.to_datetime(customer_df['order_purchase_timestamp'], errors='coerce')
 
 # Menampilkan judul di Sidebar
 st.sidebar.title("Analisis Data Pelanggan, Pembayaran, dan Geolokasi")
@@ -25,11 +25,11 @@ st.sidebar.title("Analisis Customer Berdasarkan Tanggal")
 
 # Fitur filter berdasarkan tanggal di sidebar
 st.sidebar.subheader("Filter Berdasarkan Tanggal")
-start_date = st.sidebar.date_input("Tanggal Mulai", customer_df['tanggal'].min())
-end_date = st.sidebar.date_input("Tanggal Akhir", customer_df['tanggal'].max())
+start_date = st.sidebar.date_input("Tanggal Mulai", customer_df['order_purchase_timestamp'].min())
+end_date = st.sidebar.date_input("Tanggal Akhir", customer_df['order_purchase_timestamp'].max())
 
 # Filter data berdasarkan rentang tanggal
-filtered_data = customer_df[(customer_df['tanggal'] >= pd.to_datetime(start_date)) & (customer_df['tanggal'] <= pd.to_datetime(end_date))]
+filtered_data = customer_df[(customer_df['order_purchase_timestamp'] >= pd.to_datetime(start_date)) & (customer_df['order_purchase_timestamp'] <= pd.to_datetime(end_date))]
 
 # Navigasi Tab
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Overview", "Analisis Customer", "RFM Analisis", "Geospatial Analysis", "Analisis Pembayaran", "Summary"])
