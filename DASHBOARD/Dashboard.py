@@ -12,7 +12,14 @@ def load_data():
     data_path = "DASHBOARD/main_data.csv"  
     data = pd.read_csv(data_path)
     return data
-    
+
+
+# Navigasi Tab
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Overview", "Analisis Customer", "RFM Analisis", "Geospatial Analysis", "Analisis Pembayaran", "Summary"])
+
+# Overview
+with tab1:
+        
 # Memuat data
 customer_df = load_data()
 
@@ -43,12 +50,6 @@ else:
 
 # Tampilkan data yang telah difilter
 st.write(filtered_data)
-
-# Navigasi Tab
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Overview", "Analisis Customer", "RFM Analisis", "Geospatial Analysis", "Analisis Pembayaran", "Summary"])
-
-# Overview
-with tab1:
     st.subheader("Informasi Data Pelanggan:")
     st.write(filtered_data.info())
     st.subheader("Sampel Data Pelanggan:")
