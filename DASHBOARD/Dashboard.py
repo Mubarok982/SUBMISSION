@@ -15,7 +15,7 @@ def load_data():
 
 # Memuat dataset
 def load_data():
-    data_path = "main_data.csv"  
+    data_path = "DASHBOARD/main_data.csv"  
     data = pd.read_csv(data_path)
     return data
 
