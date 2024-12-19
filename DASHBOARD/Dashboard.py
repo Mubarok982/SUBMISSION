@@ -202,7 +202,8 @@ with tab6:
     st.write("1. Statistik Deskriptif")
 
     Ringkasan: Statistik deskriptif memberi kita gambaran umum tentang data pelanggan. Di sini kita bisa melihat angka-angka penting seperti rata-rata usia pelanggan, total transaksi, dan berbagai metrik lainnya. Ini seperti melihat snapshot data, membantu kita memahami sebaran dan variasi data yang ada.
-    Contoh: "Melalui statistik ini, kita bisa melihat bagaimana pelanggan tersebar berdasarkan usia, jumlah transaksi, dan lainnya. Misalnya, rata-rata transaksi atau nilai ekstrem bisa memberi gambaran apakah ada pelanggan yang sering membeli dalam jumlah besar."
+    st.write("""Ringkasan: Dengan semua visualisasi ini, kita bisa mendapatkan gambaran lengkap tentang siapa pelanggan kita, bagaimana mereka berbelanja, dan di mana mereka berada. 
+     Ini memberi kita wawasan penting untuk membuat keputusan yang lebih baik dan strategi yang lebih terarah.""")
 
 2. Heatmap Korelasi
 
