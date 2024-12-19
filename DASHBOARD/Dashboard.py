@@ -199,7 +199,7 @@ with tab5:
 
 # Summary
 with tab6:
-    st.write("1. Statistik Deskriptif
+    st.write("1. Statistik Deskriptif")
 
     Ringkasan: Statistik deskriptif memberi kita gambaran umum tentang data pelanggan. Di sini kita bisa melihat angka-angka penting seperti rata-rata usia pelanggan, total transaksi, dan berbagai metrik lainnya. Ini seperti melihat snapshot data, membantu kita memahami sebaran dan variasi data yang ada.
     Contoh: "Melalui statistik ini, kita bisa melihat bagaimana pelanggan tersebar berdasarkan usia, jumlah transaksi, dan lainnya. Misalnya, rata-rata transaksi atau nilai ekstrem bisa memberi gambaran apakah ada pelanggan yang sering membeli dalam jumlah besar."
