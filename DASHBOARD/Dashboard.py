@@ -10,14 +10,9 @@ import streamlit.components.v1 as components
 # Memuat dataset
 def load_data():
     data_path = "DASHBOARD/main_data.csv"
-    if os.path.exists(data_path):
-        data = pd.read_csv(data_path)
-        return data
-    else:
-        st.error("File not found. Please check the file path.")
-        return None
-
-
+    data = pd.read_csv(data_path)
+    return data
+   
 # Navigasi Tab
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Overview", "Analisis Customer", "RFM Analisis", "Geospatial Analysis", "Analisis Pembayaran", "Summary"])
 
