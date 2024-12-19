@@ -19,34 +19,34 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Overview", "Analisis Customer", "
 
 # Overview
 with tab1:
-        
-# Memuat data
-customer_df = load_data()
-
-# Pastikan kolom 'tanggal' ada dan dalam format datetime
-customer_df['order_purchase_timestamp'] = pd.to_datetime(customer_df['order_purchase_timestamp'], errors='coerce')
-
-# Menampilkan judul di Sidebar
-st.sidebar.title("Analisis Data Pelanggan, Pembayaran, dan Geolokasi")
-st.sidebar.title("Analisis Customer Berdasarkan Tanggal")
-
-# Fitur filter berdasarkan tanggal di sidebar
-st.sidebar.subheader("Filter Berdasarkan Tanggal")
-
-# Checkbox untuk memilih rentang tanggal
-date_range_selected = st.sidebar.checkbox("Pilih Rentang Tanggal", value=True)
-
-if date_range_selected:
-    # Input rentang tanggal
-    start_date = st.sidebar.date_input("Tanggal Mulai", customer_df['order_purchase_timestamp'].min())
-    end_date = st.sidebar.date_input("Tanggal Akhir", customer_df['order_purchase_timestamp'].max())
+            
+    # Memuat data
+    customer_df = load_data()
     
-    # Filter data berdasarkan rentang tanggal
-    filtered_data = customer_df[(customer_df['order_purchase_timestamp'] >= pd.to_datetime(start_date)) & 
-                                (customer_df['order_purchase_timestamp'] <= pd.to_datetime(end_date))]
-else:
-    # Jika checkbox tidak dicentang, tampilkan seluruh data
-    filtered_data = customer_df
+    # Pastikan kolom 'tanggal' ada dan dalam format datetime
+    customer_df['order_purchase_timestamp'] = pd.to_datetime(customer_df['order_purchase_timestamp'], errors='coerce')
+    
+    # Menampilkan judul di Sidebar
+    st.sidebar.title("Analisis Data Pelanggan, Pembayaran, dan Geolokasi")
+    st.sidebar.title("Analisis Customer Berdasarkan Tanggal")
+    
+    # Fitur filter berdasarkan tanggal di sidebar
+    st.sidebar.subheader("Filter Berdasarkan Tanggal")
+    
+    # Checkbox untuk memilih rentang tanggal
+    date_range_selected = st.sidebar.checkbox("Pilih Rentang Tanggal", value=True)
+    
+    if date_range_selected:
+        # Input rentang tanggal
+        start_date = st.sidebar.date_input("Tanggal Mulai", customer_df['order_purchase_timestamp'].min())
+        end_date = st.sidebar.date_input("Tanggal Akhir", customer_df['order_purchase_timestamp'].max())
+        
+        # Filter data berdasarkan rentang tanggal
+        filtered_data = customer_df[(customer_df['order_purchase_timestamp'] >= pd.to_datetime(start_date)) & 
+                                    (customer_df['order_purchase_timestamp'] <= pd.to_datetime(end_date))]
+    else:
+        # Jika checkbox tidak dicentang, tampilkan seluruh data
+        filtered_data = customer_df
 
 # Tampilkan data yang telah difilter
 st.write(filtered_data)
