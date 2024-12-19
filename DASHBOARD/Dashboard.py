@@ -13,11 +13,17 @@ def load_data():
     data = pd.read_csv(data_path)
     return data
 
+# Memuat dataset
+def load_data():
+    data_path = "main_data.csv"  
+    data = pd.read_csv(data_path)
+    return data
+
 # Memuat data
 customer_df = load_data()
 
 # Pastikan kolom 'tanggal' ada dan dalam format datetime
-customer_df['tanggal'] = pd.to_datetime(customer_df['order_purchase_timestamp'], errors='coerce')
+customer_df['order_purchase_timestamp'] = pd.to_datetime(customer_df['order_purchase_timestamp'], errors='coerce')
 
 # Menampilkan judul di Sidebar
 st.sidebar.title("Analisis Data Pelanggan, Pembayaran, dan Geolokasi")
