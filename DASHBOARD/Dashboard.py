@@ -7,18 +7,6 @@ from folium.plugins import MarkerCluster
 import folium
 import streamlit.components.v1 as components
 
-# Memuat dataset
-def load_data():
-    data_path = "DASHBOARD/main_data.csv"  
-    data = pd.read_csv(data_path)
-    return data
-
-# Memuat dataset
-def load_data():
-    data_path = "DASHBOARD/main_data.csv"  
-    data = pd.read_csv(data_path)
-    return data
-
 # Memuat data
 customer_df = load_data()
 
@@ -31,11 +19,24 @@ st.sidebar.title("Analisis Customer Berdasarkan Tanggal")
 
 # Fitur filter berdasarkan tanggal di sidebar
 st.sidebar.subheader("Filter Berdasarkan Tanggal")
-start_date = st.sidebar.date_input("Tanggal Mulai", customer_df['order_purchase_timestamp'].min())
-end_date = st.sidebar.date_input("Tanggal Akhir", customer_df['order_purchase_timestamp'].max())
 
-# Filter data berdasarkan rentang tanggal
-filtered_data = customer_df[(customer_df['order_purchase_timestamp'] >= pd.to_datetime(start_date)) & (customer_df['order_purchase_timestamp'] <= pd.to_datetime(end_date))]
+# Checkbox untuk memilih rentang tanggal
+date_range_selected = st.sidebar.checkbox("Pilih Rentang Tanggal", value=True)
+
+if date_range_selected:
+    # Input rentang tanggal
+    start_date = st.sidebar.date_input("Tanggal Mulai", customer_df['order_purchase_timestamp'].min())
+    end_date = st.sidebar.date_input("Tanggal Akhir", customer_df['order_purchase_timestamp'].max())
+    
+    # Filter data berdasarkan rentang tanggal
+    filtered_data = customer_df[(customer_df['order_purchase_timestamp'] >= pd.to_datetime(start_date)) & 
+                                (customer_df['order_purchase_timestamp'] <= pd.to_datetime(end_date))]
+else:
+    # Jika checkbox tidak dicentang, tampilkan seluruh data
+    filtered_data = customer_df
+
+# Tampilkan data yang telah difilter
+st.write(filtered_data)
 
 # Navigasi Tab
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Overview", "Analisis Customer", "RFM Analisis", "Geospatial Analysis", "Analisis Pembayaran", "Summary"])
