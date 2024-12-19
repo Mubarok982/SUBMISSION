@@ -7,6 +7,12 @@ from folium.plugins import MarkerCluster
 import folium
 import streamlit.components.v1 as components
 
+# Memuat dataset
+def load_data():
+    data_path = "DASHBOARD/main_data.csv"  
+    data = pd.read_csv(data_path)
+    return data
+    
 # Memuat data
 customer_df = load_data()
 
