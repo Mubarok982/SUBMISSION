@@ -25,7 +25,7 @@ with tab1:
     customer_df['order_purchase_timestamp'] = pd.to_datetime(customer_df['order_purchase_timestamp'], errors='coerce')
 
     # Menampilkan judul di Sidebar
-    st.sidebar.title("Analisis Data Pelanggan, Pembayaran, dan Geolokasi")
+    st.sidebar.title("Analisis Data E-commerce Public Dataset")
     st.sidebar.title("Analisis Customer Berdasarkan Tanggal")
 
     # Fitur filter berdasarkan tanggal di sidebar
