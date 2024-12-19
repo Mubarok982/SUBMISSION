@@ -196,64 +196,59 @@ with tab5:
     plt.figure(figsize=(10, 6))
     sns.barplot(x=payment_type_counts.index, y=payment_type_counts.values, palette="coolwarm")
     st.pyplot(plt)
-
 # Summary
 with tab6:
     st.write("1. Statistik Deskriptif")
+    st.write("""Ringkasan: Statistik deskriptif memberi kita gambaran umum tentang data pelanggan. 
+    Di sini kita bisa melihat angka-angka penting seperti rata-rata usia pelanggan, total transaksi, dan berbagai metrik lainnya. 
+    Ini seperti melihat snapshot data, membantu kita memahami sebaran dan variasi data yang ada.""")
 
-  st.write("""Ringkasan: Statistik deskriptif memberi kita gambaran umum tentang data pelanggan. 
-Di sini kita bisa melihat angka-angka penting seperti rata-rata usia pelanggan, total transaksi, dan berbagai metrik lainnya. 
-Ini seperti melihat snapshot data, membantu kita memahami sebaran dan variasi data yang ada.""")
+    st.write("2. Heatmap Korelasi")
+    st.write("""Ringkasan: Heatmap ini menampilkan hubungan antara berbagai aspek data. Dengan melihat warna, kita bisa tahu apakah dua variabel saling memengaruhi. 
+    Ini sangat berguna untuk menemukan pola tersembunyi yang mungkin belum kita sadari.
+    Contoh: "Melalui heatmap, kita bisa melihat apakah ada hubungan antara jumlah transaksi dan frekuensi pembelian. Misalnya, apakah semakin sering pelanggan berbelanja, semakin tinggi pengeluarannya?""")
 
+    st.write("3. Histogram Kolom Numerik")
+    st.write("""Ringkasan: Histogram membantu kita memahami bagaimana data numerik terdistribusi. Apakah data banyak terkumpul di nilai tertentu atau tersebar merata? 
+    Ini memberi kita insight tentang pola yang ada.
+    Contoh: "Histogram ini menunjukkan bagaimana jumlah transaksi tersebar di seluruh pelanggan. Apakah sebagian besar pelanggan berbelanja sedikit atau ada yang sangat sering berbelanja?""")
 
-2. Heatmap Korelasi
+    st.write("4. Scatter Plot Kolom Numerik")
+    st.write("""Ringkasan: Scatter plot menampilkan hubungan antara dua variabel. Ini membantu kita melihat apakah ada pola atau tren tertentu yang bisa kita manfaatkan, atau bahkan mengidentifikasi titik-titik yang berbeda dari yang lainnya.
+    Contoh: "Dengan scatter plot ini, kita bisa melihat apakah ada hubungan antara usia pelanggan dan jumlah transaksi mereka. Mungkin pelanggan muda lebih sering bertransaksi, atau sebaliknya?""")
 
-    Ringkasan: Heatmap ini menampilkan hubungan antara berbagai aspek data. Dengan melihat warna, kita bisa tahu apakah dua variabel saling memengaruhi. Ini sangat berguna untuk menemukan pola tersembunyi yang mungkin belum kita sadari.
-    Contoh: "Melalui heatmap, kita bisa melihat apakah ada hubungan antara jumlah transaksi dan frekuensi pembelian. Misalnya, apakah semakin sering pelanggan berbelanja, semakin tinggi pengeluarannya?"
+    st.write("5. Boxplot untuk Outliers")
+    st.write("""Ringkasan: Boxplot ini membantu kita menemukan nilai-nilai yang terlalu jauh dari kebanyakan data, atau yang biasa disebut outliers. 
+    Ini sangat penting karena bisa menunjukkan anomali atau data yang perlu perhatian lebih.
+    Contoh: "Boxplot ini menunjukkan apakah ada kota atau pelanggan dengan transaksi yang sangat besar atau kecil dibandingkan lainnya. Ini bisa membantu kita melihat pola unik dalam data.""")
 
-3. Histogram Kolom Numerik
+    st.write("6. Pie Chart Kolom Kategori")
+    st.write("""Ringkasan: Pie chart ini memberi gambaran yang jelas tentang bagaimana pelanggan tersebar berdasarkan kategori tertentu. Misalnya, kita bisa melihat berapa banyak pelanggan yang memilih metode pembayaran tertentu atau status pelanggan.
+    Contoh: "Pie chart ini memperlihatkan persentase metode pembayaran yang digunakan pelanggan. Apakah mayoritas memilih transfer bank, atau lebih suka menggunakan kartu kredit?""")
 
-    Ringkasan: Histogram membantu kita memahami bagaimana data numerik terdistribusi. Apakah data banyak terkumpul di nilai tertentu atau tersebar merata? Ini memberi kita insight tentang pola yang ada.
-    Contoh: "Histogram ini menunjukkan bagaimana jumlah transaksi tersebar di seluruh pelanggan. Apakah sebagian besar pelanggan berbelanja sedikit atau ada yang sangat sering berbelanja?"
+    st.write("7. Distribusi Customer per State dan City")
+    st.write("""Ringkasan: Visualisasi ini membantu kita melihat sebaran pelanggan berdasarkan lokasi geografis, baik itu negara bagian atau kota. 
+    Ini memberi kita pemahaman lebih baik tentang konsentrasi pelanggan di berbagai area.
+    Contoh: "Grafik ini menunjukkan kota dan negara bagian mana yang memiliki jumlah pelanggan terbanyak. Ini membantu kita memahami di mana pelanggan kita terkonsentrasi dan apakah ada area yang perlu perhatian lebih.""")
 
-4. Scatter Plot Kolom Numerik
+    st.write("8. Boxplot Distribusi Jumlah Customer per Kota")
+    st.write("""Ringkasan: Boxplot ini menunjukkan variasi jumlah pelanggan di setiap kota. 
+    Ini membantu kita melihat kota mana yang memiliki banyak pelanggan, dan kota mana yang mungkin kurang terlayani.
+    Contoh: "Boxplot ini memperlihatkan bagaimana jumlah pelanggan berbeda di setiap kota. Ada kota dengan jumlah pelanggan sangat tinggi, dan ada pula yang lebih rendah.""")
 
-    Ringkasan: Scatter plot menampilkan hubungan antara dua variabel. Ini membantu kita melihat apakah ada pola atau tren tertentu yang bisa kita manfaatkan, atau bahkan mengidentifikasi titik-titik yang berbeda dari yang lainnya.
-    Contoh: "Dengan scatter plot ini, kita bisa melihat apakah ada hubungan antara usia pelanggan dan jumlah transaksi mereka. Mungkin pelanggan muda lebih sering bertransaksi, atau sebaliknya?"
+    st.write("9. Peta Geospasial (Folium Map)")
+    st.write("""Ringkasan: Peta ini memberi gambaran visual mengenai lokasi pelanggan di seluruh wilayah, lengkap dengan marker untuk menunjukkan konsentrasi pelanggan di setiap daerah. 
+    Ini sangat berguna untuk memahami pola geografis dan menentukan strategi pemasaran yang lebih tepat.
+    Contoh: "Dengan peta ini, kita bisa melihat di mana saja pelanggan kita berada. Setiap marker mewakili jumlah pelanggan di provinsi tertentu, dan kita bisa segera melihat area dengan konsentrasi tinggi.""")
 
-5. Boxplot untuk Outliers
+    st.write("10. Analisis Pembayaran")
+    st.write("""Ringkasan: Di sini, kita melihat cara pelanggan melakukan pembayaran. 
+    Ini membantu kita memahami preferensi mereka, apakah mereka lebih suka bayar dengan kartu kredit, transfer bank, atau metode lain.
+    Contoh: "Grafik ini menunjukkan metode pembayaran mana yang paling sering digunakan oleh pelanggan. Apakah pelanggan kita lebih banyak yang memilih bayar dengan kartu kredit atau dompet digital?""")
 
-    Ringkasan: Boxplot ini membantu kita menemukan nilai-nilai yang terlalu jauh dari kebanyakan data, atau yang biasa disebut outliers. Ini sangat penting karena bisa menunjukkan anomali atau data yang perlu perhatian lebih.
-    Contoh: "Boxplot ini menunjukkan apakah ada kota atau pelanggan dengan transaksi yang sangat besar atau kecil dibandingkan lainnya. Ini bisa membantu kita melihat pola unik dalam data."
+    st.write("""Kesimpulan Akhir:
+    Ringkasan: Dengan semua visualisasi ini, kita bisa mendapatkan gambaran lengkap tentang siapa pelanggan kita, bagaimana mereka berbelanja, dan di mana mereka berada. 
+    Ini memberi kita wawasan penting untuk membuat keputusan yang lebih baik dan strategi yang lebih terarah.""")
 
-6. Pie Chart Kolom Kategori
+    st.caption("Copyright © Rizqy Mubarok 2024")
 
-    Ringkasan: Pie chart ini memberi gambaran yang jelas tentang bagaimana pelanggan tersebar berdasarkan kategori tertentu. Misalnya, kita bisa melihat berapa banyak pelanggan yang memilih metode pembayaran tertentu atau status pelanggan.
-    Contoh: "Pie chart ini memperlihatkan persentase metode pembayaran yang digunakan pelanggan. Apakah mayoritas memilih transfer bank, atau lebih suka menggunakan kartu kredit?"
-
-7. Distribusi Customer per State dan City
-
-    Ringkasan: Visualisasi ini membantu kita melihat sebaran pelanggan berdasarkan lokasi geografis, baik itu negara bagian atau kota. Ini memberi kita pemahaman lebih baik tentang konsentrasi pelanggan di berbagai area.
-    Contoh: "Grafik ini menunjukkan kota dan negara bagian mana yang memiliki jumlah pelanggan terbanyak. Ini membantu kita memahami di mana pelanggan kita terkonsentrasi dan apakah ada area yang perlu perhatian lebih."
-
-8. Boxplot Distribusi Jumlah Customer per Kota
-
-    Ringkasan: Boxplot ini menunjukkan variasi jumlah pelanggan di setiap kota. Ini membantu kita melihat kota mana yang memiliki banyak pelanggan, dan kota mana yang mungkin kurang terlayani.
-    Contoh: "Boxplot ini memperlihatkan bagaimana jumlah pelanggan berbeda di setiap kota. Ada kota dengan jumlah pelanggan sangat tinggi, dan ada pula yang lebih rendah."
-
-9. Peta Geospasial (Folium Map)
-
-    Ringkasan: Peta ini memberi gambaran visual mengenai lokasi pelanggan di seluruh wilayah, lengkap dengan marker untuk menunjukkan konsentrasi pelanggan di setiap daerah. Ini sangat berguna untuk memahami pola geografis dan menentukan strategi pemasaran yang lebih tepat.
-    Contoh: "Dengan peta ini, kita bisa melihat di mana saja pelanggan kita berada. Setiap marker mewakili jumlah pelanggan di provinsi tertentu, dan kita bisa segera melihat area dengan konsentrasi tinggi."
-
-10. Analisis Pembayaran
-
-    Ringkasan: Di sini, kita melihat cara pelanggan melakukan pembayaran. Ini membantu kita memahami preferensi mereka, apakah mereka lebih suka bayar dengan kartu kredit, transfer bank, atau metode lain.
-    Contoh: "Grafik ini menunjukkan metode pembayaran mana yang paling sering digunakan oleh pelanggan. Apakah pelanggan kita lebih banyak yang memilih bayar dengan kartu kredit atau dompet digital?"
-
-Kesimpulan Akhir
-
-   st.write("""Ringkasan: Dengan semua visualisasi ini, kita bisa mendapatkan gambaran lengkap tentang siapa pelanggan kita, bagaimana mereka berbelanja, dan di mana mereka berada. 
-Ini memberi kita wawasan penting untuk membuat keputusan yang lebih baik dan strategi yang lebih terarah.""")
-
-    st.caption('Copyright © Rizqy Mubarok 2024')
