@@ -9,9 +9,13 @@ import streamlit.components.v1 as components
 
 # Memuat dataset
 def load_data():
-    data_path = "DASHBOARD/main_data.csv"  
-    data = pd.read_csv(data_path)
-    return data
+    data_path = "DASHBOARD/main_data.csv"
+    if os.path.exists(data_path):
+        data = pd.read_csv(data_path)
+        return data
+    else:
+        st.error("File not found. Please check the file path.")
+        return None
 
 
 # Navigasi Tab
