@@ -252,5 +252,7 @@ with tab6:
 
 Kesimpulan Akhir
 
-    Ringkasan: Dengan semua visualisasi ini, kita bisa mendapatkan gambaran lengkap tentang siapa pelanggan kita, bagaimana mereka berbelanja, dan di mana mereka berada. Ini memberi kita wawasan penting untuk membuat keputusan yang lebih baik dan strategi yang lebih terarah.")
+   st.write("""Ringkasan: Dengan semua visualisasi ini, kita bisa mendapatkan gambaran lengkap tentang siapa pelanggan kita, bagaimana mereka berbelanja, dan di mana mereka berada. 
+Ini memberi kita wawasan penting untuk membuat keputusan yang lebih baik dan strategi yang lebih terarah.""")
+
     st.caption('Copyright © Rizqy Mubarok 2024')
