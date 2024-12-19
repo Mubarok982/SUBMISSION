@@ -201,9 +201,9 @@ with tab5:
 with tab6:
     st.write("1. Statistik Deskriptif")
 
-   st.write("""Ringkasan: Statistik deskriptif memberi kita gambaran umum tentang data pelanggan. 
-       Di sini kita bisa melihat angka-angka penting seperti rata-rata usia pelanggan, total transaksi, dan berbagai metrik lainnya. 
-       Ini seperti melihat snapshot data, membantu kita memahami sebaran dan variasi data yang ada.""")
+  st.write("""Ringkasan: Statistik deskriptif memberi kita gambaran umum tentang data pelanggan. 
+Di sini kita bisa melihat angka-angka penting seperti rata-rata usia pelanggan, total transaksi, dan berbagai metrik lainnya. 
+Ini seperti melihat snapshot data, membantu kita memahami sebaran dan variasi data yang ada.""")
 
 
 2. Heatmap Korelasi
