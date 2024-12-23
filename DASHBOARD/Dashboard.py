@@ -136,6 +136,56 @@ with tab2:
     sns.boxplot(customer_per_city, vert=False, patch_artist=True, ax=ax)
     st.pyplot(fig)
 
+with tab3:
+    st.header("Analisis RFM (Recency, Frequency, Monetary)")
+
+    # Tampilkan Data RFM
+    st.subheader("Tabel RFM:")
+    st.dataframe(rfm_df)
+
+    # Visualisasi Segmentasi Pelanggan
+    st.subheader("Distribusi Pelanggan Berdasarkan Segmentasi RFM")
+    st.bar_chart(rfm_df['Segment'].value_counts())
+        
+
+    # Langkah 1: Memuat dataset
+    df = pd.read_csv("main_data.csv")
+
+    # Langkah 2: Mengubah kolom 'order_purchase_timestamp' menjadi tipe datetime
+    df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
+
+    # Langkah 3: Menghitung Recency (berapa lama sejak pembelian terakhir)
+    tanggal_terakhir = df['order_purchase_timestamp'].max() + pd.Timedelta(days=1)
+    df['Recency'] = (tanggal_terakhir - df['order_purchase_timestamp']).dt.days
+
+    # Langkah 4: Menghitung Frequency (frekuensi pembelian per pelanggan)
+    rfm_df = df.groupby('customer_id').agg(
+        Frequency=('order_id', 'nunique'),  # Menghitung jumlah order unik per customer_id
+        Monetary=('payment_value', 'sum')   # Menjumlahkan total pembayaran per customer_id
+    ).reset_index()
+
+    # Langkah 5: Menggabungkan data Recency dengan Frequency dan Monetary
+    rfm_df = pd.merge(rfm_df, df[['customer_id', 'Recency']].drop_duplicates(), on='customer_id', how='left')
+
+    # Langkah 6: Menghitung RFM Score
+    rfm_df['RFM_Score'] = rfm_df[['Recency', 'Frequency', 'Monetary']].apply(lambda x: (x['Recency'] + x['Frequency'] + x['Monetary']), axis=1)
+
+    # Langkah 7: Membuat Segmentasi Berdasarkan RFM Score
+    rfm_df['Segment'] = pd.cut(rfm_df['RFM_Score'],
+                            bins=[0, 3, 6, 9],
+                            labels=['Nilai Rendah', 'Nilai Sedang', 'Nilai Tinggi'])
+
+    # Langkah 8: Menampilkan tabel RFM
+    print(rfm_df.head())
+
+    # Langkah 9: Visualisasi Distribusi Segmen Pelanggan
+    plt.figure(figsize=(8, 6))
+    sns.countplot(data=rfm_df, x='Segment', palette='viridis')
+    plt.title('Distribusi Pelanggan Berdasarkan Segmentasi RFM')
+    plt.xlabel('Segment')
+    plt.ylabel('Jumlah Pelanggan')
+    plt.show()
+
 # Analisis Geospasial
 with tab4:
     # Memuat dataset
