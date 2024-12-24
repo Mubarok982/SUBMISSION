@@ -138,9 +138,12 @@ with tab2:
 
 with tab3:
     st.header("Analisis RFM (Recency, Frequency, Monetary)")
-
-    # Tampilkan Data RFM
-    st.subheader("Tabel RFM:")
+    rfm_df = pd.DataFrame({
+        "CustomerID": [1, 2, 3],
+        "Recency": [10, 20, 30],
+        "Frequency": [5, 3, 8],
+        "Monetary": [100, 200, 300]
+    })
     st.dataframe(rfm_df)
 
     # Visualisasi Segmentasi Pelanggan
