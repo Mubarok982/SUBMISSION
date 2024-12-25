@@ -72,7 +72,7 @@ with tab1:
     st.subheader("Histogram Kolom Numerik")
     num_columns = numeric_data.columns
     if not num_columns.empty:
-        column = st.selectbox("Pilih Kolom", num_columns, key="histogram_column")
+        column = st.selectbox("Pilih Kolom", num_columns, key="histogram_columna")
         fig, ax = plt.subplots()
         sns.histplot(filtered_data[column], kde=True, ax=ax)
         st.pyplot(fig)
@@ -133,7 +133,7 @@ with tab2:
     st.subheader("Boxplot Distribusi Jumlah Customer per Kota")
     customer_per_city = filtered_data['customer_city'].value_counts()
     fig, ax = plt.subplots(figsize=(10, 5))
-    sns.boxplot(customer_per_city, vert=False, patch_artist=True, ax=ax)
+    sns.boxplot(x=customer_per_city, vert=False, patch_artist=True, ax=ax)
     st.pyplot(fig)
 
 with tab3:
