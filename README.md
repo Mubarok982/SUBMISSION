@@ -22,11 +22,8 @@ Panduan untuk menyiapkan lingkungan pengembangan dan menjalankan aplikasi dashbo
 ### Menggunakan Shell/Terminal
 1. Pindah ke direktori proyek:
    ```bash
-   cd SINAU
-   cd DATA_ANALIS
-   cd dicoding
-   cd SUBMISSION
-   cd DASHBOARD
+   masuk ke directory yang aktif(DASHBOARD)
+   lalu jalankan perintah "streamlit run DASHBOARD/Dashboard.py"
    ```
 2. Install dependencies menggunakan Pipenv:
    ```bash
